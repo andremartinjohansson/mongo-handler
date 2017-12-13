@@ -2,10 +2,6 @@
   "name": "mongo-amj",
   "version": "1.0.1",
   "description": "Module for connecting and using mongodb",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/andymartinj/mongo-handler"
-  },
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha --exit test/**/*.js",
     "report-coveralls": "nyc report --reporter=text-lcov | coveralls"
