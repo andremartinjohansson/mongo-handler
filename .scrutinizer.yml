@@ -1,5 +1,6 @@
 checks:
     javascript: true
+    code_rating: true
 
 filter:
     excluded_paths:
