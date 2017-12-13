@@ -1,0 +1,42 @@
+version: "3"
+services:
+    node_latest:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-latest
+        environment:
+            - DB_DSN=mongodb://mongodb:27017/chat
+        volumes:
+            - ./:/app/
+        ports:
+            - "3000:3000"
+    node_7:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-7.6
+        environment:
+            - DB_DSN=mongodb://mongodb:27017/chat
+        volumes:
+            - ./:/app/
+        ports:
+            - "3000:3000"
+    node_8:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-8
+        environment:
+            - DB_DSN=mongodb://mongodb:27017/chat
+        volumes:
+            - ./:/app/
+        ports:
+            - "3000:3000"
+    mongodb:
+        image: mongo
+        container_name: "mongodb"
+        environment:
+            - MONGO_DATA_DIR=/data/db
+        volumes:
+            - ./data/db:/data/db
+        ports:
+            - 27017:27017
+        command: mongod

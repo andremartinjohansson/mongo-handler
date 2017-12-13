@@ -1,0 +1,31 @@
+{
+  "name": "mongo-handler",
+  "version": "1.0.0",
+  "description": "Module for connecting and using mongodb",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha --exit test/**/*.js",
+    "report-coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "author": "André Johansson",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  },
+  "devDependencies": {
+    "blanket": "^1.2.3",
+    "chai": "^4.1.2",
+    "codecov": "^3.0.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.10.0",
+    "eslint-plugin-jquery": "^1.2.1",
+    "eslint-plugin-pug": "^1.1.0",
+    "eslint-plugin-react": "^7.4.0",
+    "istanbul": "^0.4.5",
+    "javascript-style-guide": "^0.9.10",
+    "js-yaml": "^3.10.0",
+    "jsonlint": "^1.6.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.2.1",
+    "uglify-es": "^3.1.6"
+  }
+}
