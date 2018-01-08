@@ -13,8 +13,7 @@ describe("Test database", function() {
             await db.reset();
             const data = await db.get();
 
-            assert.equal(data[0].user, "Server");
-            assert.equal(data[0].message, "Welcome to ChitChatter2000!");
+            assert.equal(data.length, 0);
             await db.close();
         });
     });
