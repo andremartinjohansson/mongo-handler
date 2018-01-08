@@ -27,15 +27,15 @@ describe("Test database", function() {
             await db.insert(item);
             const data = await db.get();
 
-            assert.equal(data[1].user, "Andy");
-            assert.equal(data[1].message, "Testing");
+            assert.equal(data[0].user, "Andy");
+            assert.equal(data[0].message, "Testing");
             await db.close();
         });
     });
     describe("Update message", function() {
         it("Should update second message in database", async () => {
             const msg = await db.get();
-            const old = msg[1];
+            const old = msg[0];
 
             var item = {
                 user: "Andy",
@@ -45,20 +45,20 @@ describe("Test database", function() {
             await db.update(old._id, item);
             const data = await db.get();
 
-            assert.equal(data[1].user, "Andy");
-            assert.equal(data[1].message, "Edited");
+            assert.equal(data[0].user, "Andy");
+            assert.equal(data[0].message, "Edited");
             await db.close();
         });
     });
     describe("Delete message", function() {
         it("Should delete second message in database", async () => {
             const msg = await db.get();
-            const old = msg[1];
+            const old = msg[0];
 
             await db.delete(old._id);
             const data = await db.get();
 
-            assert.equal(data[1], undefined);
+            assert.equal(data[0], undefined);
             await db.close();
         });
     });
