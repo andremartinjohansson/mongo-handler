@@ -41,10 +41,6 @@ const mongoInit = (dsn, collection) => {
             const col = await connect();
 
             await col.deleteMany({});
-            await col.insert({
-                "user": "Server",
-                "message": "Welcome to ChitChatter2000!"
-            });
 
             return col.find({}).toArray();
         },
